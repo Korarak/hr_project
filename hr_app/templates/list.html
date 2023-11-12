@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-3">
+    <h2>ข้อมูลพนักงานแบบตาราง</h2>
+    <p></p>            
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>ลำดับ</th>
+          <th>ชื่อ</th>
+          <th>นามสกุล</th>
+          <th>โทร</th>
+          <th>ปีที่เริ่มงาน</th>
+          <th>ภาพ</th>
+        </tr>
+      </thead>
+      <tbody>
+{% for i in person %}
+       <tr>
+      <td>{{ forloop.counter }}</td>
+      <td>{{i.p_firstname}}</td>
+      <td>{{i.p_lastname}}</td>
+      <td>{{i.p_tel}}</td>
+      <td>{{i.p_regisyear}}</td>
+      <td><img src="{{i.p_picture.url}}" width="100"></td>
+       </tr>
+{% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

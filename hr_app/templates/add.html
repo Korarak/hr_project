@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container my-4 shadow w-25% rounded">
+  <br>
+  <h2> เพิ่มข้อมูลพนักงาน</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="id_firstname" class="form-label">ชื่อ</label>
+      <input type="text" name="firstname" class="form-control" id="id_firstname" required>
+    </div>
+    <div class="mb-3">
+      <label for="id_lastname" class="form-label">นามสกุล</label>
+      <input type="text" name="lastname" class="form-control" id="id_lastname" required>
+    </div>
+    <div class="mb-3">
+      <label for="id_tel" class="form-label">เบอร์โทร</label>
+      <input type="tel" name="tel" class="form-control" id="id_tel" required>
+    </div>
+    <div class="mb-3">
+      <label for="year" class="form-label">ปีที่เข้าทำงาน</label>
+      <input type="date" name="year" class="form-control" id="year" required>
+    </div>
+    <div class="mb-3">
+      <label for="id_picture" class="form-label">รูปภาพ</label>
+      <input type="file" name="picture" class="form-control" id="id_picture" accept="image/*" required>
+    </div>
+    <button type="submit" class="btn btn-primary">เพิ่มพนักงาน</button>
+  </form><br>
+</div>
+{% endblock %}
