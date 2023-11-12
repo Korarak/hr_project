@@ -22,7 +22,7 @@
       <td>{{i.p_lastname}}</td>
       <td>{{i.p_tel}}</td>
       <td>{{i.p_regisyear}}</td>
-      <td><img src="{{i.p_picture.url}}" width="100"></td>
+      <td><img src="{% static "i.p_picture" %}" width="100"></td>
        </tr>
 {% endfor %}
       </tbody>
